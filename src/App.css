@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -19,4 +20,13 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+
+header {
+  background-image: url('C:\Users\6777\Documents\react\testing-react\src\resources\MYtineraryLogo.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 250px;
+  position: center;
 }

@@ -1,32 +1,23 @@
 
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
-}
-
-
 header {
-  background-image: url('C:\Users\6777\Documents\react\testing-react\src\resources\MYtineraryLogo.png');
+  background-image: url('./resources/MYtineraryLogo.png');
   background-size: cover;
   background-repeat: no-repeat;
-  height: 250px;
-  position: center;
+  height: 125px;
+  /* border:dashed; */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#motto{
+  display: flex;
+  /* border: dashed; */
+  justify-content: center;
+}
+
+#centerLogo{
+  display: flex;
+  height: 25vh;
+  justify-content: center;
 }

@@ -1,0 +1,12 @@
+@import "react-alice-carousel/lib/alice-carousel.css";
+
+
+#carusel{
+    margin-bottom: 0%;
+    
+}
+
+.innerDiv{
+    background-image: url('https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiyiZqJr7PlAhWStZ4KHcMYBR8QjRx6BAgBEAQ&url=https%3A%2F%2Fwww.shareicon.net%2Fo-square-851939&psig=AOvVaw1MtY5dvrfxAuPRgrg9NdRk&ust=1571953974291256');
+    background-size: contain;
+}

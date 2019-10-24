@@ -1,23 +1,35 @@
 
 header {
   background-image: url('./resources/MYtineraryLogo.png');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
-  height: 125px;
-  /* border:dashed; */
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  height: 25vh;
+  margin-top: -10%;
 }
 
 #motto{
+  margin-top: -0%;
   display: flex;
-  /* border: dashed; */
+}
+
+#motto p{
+  text-align: center;
+  color: black;
+}
+
+#center{
+  display: flex;
   justify-content: center;
 }
 
 #centerLogo{
   display: flex;
-  height: 25vh;
-  justify-content: center;
+  height: 12vh;
+  align-content: center;
+}
+
+#centerText{
+  text-align: center;
+  align-content: center;
+  margin-bottom: 3vh;
 }

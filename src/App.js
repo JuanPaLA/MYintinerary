@@ -6,9 +6,13 @@ import './App.css';
 import Footer from './Components/Footer/footer';
 import CarouselA from './Components/Carousel/carousel';
 import Nav from './Components/Nav/nav';
+import Login from './Components/Login/login';
+import ccAccount from  './Components/CreateAccount/createaccount';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 function App() {
   return (
+      <div>
       <Container fluid>        
         <header></header>
         <div id="motto">
@@ -20,6 +24,7 @@ function App() {
         
         <CarouselA />
       </Container>  
+      </div>  
   );
 }
 

@@ -11,10 +11,23 @@ import App from './App';
 import Nav from './Components/Nav/nav';
 import * as serviceWorker from './serviceWorker';
 import Carousel from './Components/Carousel/carousel';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Login from './Components/Login/login';
+import ccAccount from  './Components/CreateAccount/createaccount';
 
 
-
-ReactDOM.render(<div><Nav /> <App /></div>, document.getElementById('root'));
+ReactDOM.render( 
+    <div>          
+        <BrowserRouter>
+        <div className="App">
+        <Nav />
+            <Route exact path="/c-account" component={ccAccount}/>
+            <Route path="/about" component={Login}/>            
+        </div>
+        </BrowserRouter>
+        <App />
+    </div>
+, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

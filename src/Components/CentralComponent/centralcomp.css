@@ -1,0 +1,26 @@
+#motto{
+    margin-top: -0%;
+    display: flex;
+  }
+  
+  #motto p{
+    text-align: center;
+    color: black;
+  }
+  
+  #center{
+    display: flex;
+    justify-content: center;
+  }
+  
+  #centerLogo{
+    display: flex;
+    height: 12vh;
+    align-content: center;
+  }
+  
+  #centerText{
+    text-align: center;
+    align-content: center;
+    margin-bottom: 3vh;
+  }

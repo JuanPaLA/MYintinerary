@@ -9,19 +9,16 @@ import Nav from './Components/Nav/nav';
 import Login from './Components/Login/login';
 import ccAccount from  './Components/CreateAccount/createaccount';
 import { BrowserRouter, Route } from 'react-router-dom';
+import Header from './Components/Header/header';
+import CentralComp from './Components/CentralComponent/centralcomp';
 
 function App() {
   return (
       <div>
-      <Container fluid>        
-        <header></header>
-        <div id="motto">
-          <p>Find your perfect trip, designed by insiders who knows and love their cities</p>
-        </div>
-        <div id="center">
-          <a href="#"> <img id="centerLogo" src="./circled-right-2.png" alt="circled-right"/></a>
-        </div>
-        
+      <Container fluid>      
+        <Nav />  
+        <Header />
+        <CentralComp />
         <CarouselA />
       </Container>  
       </div>  

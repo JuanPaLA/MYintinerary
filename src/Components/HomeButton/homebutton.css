@@ -1,0 +1,24 @@
+#hb{
+  align-content: center;
+  margin-top: 3vh;
+  margin-bottom: 0vh;
+  display: flex;
+  justify-content: center;
+
+  /* position: fixed; */
+  left: 0;
+  bottom: -0;
+  width: 100%;
+  background-color: lightgray;
+  color: white;
+  text-align: center;
+
+  display: flex;
+}
+
+#homeButton{
+  height: 4vh;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
+

@@ -3,6 +3,7 @@ import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
 import { Link } from 'react-router-dom'; 
 import Header from '../Header/header';
 import Nav from '../Nav/nav';
+import HomeButt from '../HomeButton/home';
 
 const Login = () => {
     return (
@@ -47,6 +48,7 @@ const Login = () => {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
+      <HomeButt />
       </div>
     );
 }

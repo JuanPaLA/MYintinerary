@@ -1,11 +1,17 @@
-p{
-    color: red;
+
+.mainJumbo{
+    background-color: lightgrey;
+    display: flex;
 }
-#supernav{
-    margin-top: -12%;
-    margin-bottom: 7vh;
+.mmdbnav{
+    height: 8vh;
+    margin-top: 0%;
 }
 
-#navigator{
-    padding-top: -4vh;
+.submdbnav{
+    margin-top: 0%;
+}
+
+.mdbtoggler{
+    margin-top: 0%;
 }

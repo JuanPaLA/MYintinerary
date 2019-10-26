@@ -3,6 +3,7 @@ import Nav from '../Nav/nav';
 import Header from '../Header/header';
 import { Link } from 'react-router-dom';
 import { MDBBtn } from 'mdbreact';
+import HomeButt from '../HomeButton/home';
 
 
 const ccAccount = () => {
@@ -39,6 +40,7 @@ const ccAccount = () => {
               </div>
 
         </div>
+        <HomeButt />
         </div>
     );
 }

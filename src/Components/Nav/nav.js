@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import './nav.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router } from 'react-router-dom';
 import { MDBNavbar, MDBNavbarNav, MDBNavbarToggler, MDBCollapse } from "mdbreact";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import { Link } from 'react-router-dom';
@@ -18,9 +17,7 @@ import { Link } from 'react-router-dom';
    
     render() {
       return (
-        
-          <Router>
-            <Jumbotron fluid>
+          <Jumbotron fluid className="mainJumbo">
            <MDBNavbarNav left>
             <MDBNavbar color="default-color" dark expand="md">
               <MDBNavbarToggler onClick={this.toggleCollapse} />
@@ -33,8 +30,7 @@ import { Link } from 'react-router-dom';
               </MDBNavbar>
           </MDBNavbarNav>
           </Jumbotron>        
-        </Router>
-      
+        
         );
       }
     }

@@ -5,7 +5,8 @@ import CarouselA from './Components/Carousel/carousel';
 import Nav from './Components/Nav/nav';
 import Header from './Components/Header/header';
 import CentralComp from './Components/CentralComponent/centralcomp';
-import Carousel from './Components/CarouselB/Carousel';
+import HomeButt from './Components/HomeButton/home';
+
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Header />
         <CentralComp />
         <CarouselA />
+        <HomeButt />
       </div>  
   );
 }

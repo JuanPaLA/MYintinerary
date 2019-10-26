@@ -2,7 +2,7 @@ import React from 'react'
 import Nav from '../Nav/nav';
 import Header from '../Header/header';
 import { Link } from 'react-router-dom';
-import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
+import { MDBBtn } from 'mdbreact';
 
 
 const ccAccount = () => {
@@ -28,9 +28,15 @@ const ccAccount = () => {
                 <input type="password" className="form-control" placeholder="Password" id="pass" />
             </div>
 
-            <MDBBtn>
-                <Link to ="/">Home</Link>
-            </MDBBtn>
+            <div className="text-center">
+                <MDBBtn>
+                    Login
+                </MDBBtn> 
+                
+                <MDBBtn>
+                    <Link to ="/">Home</Link>
+                </MDBBtn>
+              </div>
 
         </div>
         </div>

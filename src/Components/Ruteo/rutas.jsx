@@ -5,25 +5,20 @@ import ccAccount from '../CreateAccount/createaccount';
 import App from '../../App';
 import Cities from '../Cities/cities';
 
-class Routes extends React.Component {
-  constructor () {
-    super()
-  }
+const Routes  = (props) => {
 
-  render(){
     return(
-      <div>
+      
         <Router>
           <Switch>
             <Route exact path="/" component={App}/>
-            <Route exact path="/login" component={Login}/>
-            <Route exact path="/c-account" component={ccAccount}/>
-            <Route exact path="/cities" component={Cities}/>
+            <Route path="/login" component={Login}/>
+            <Route path="/c-account" component={ccAccount}/>
+            <Route path="/cities" component={Cities}/>
           </Switch>
         </Router>
-      </div>
     )
   }
-}
+
 
 export default Routes; 

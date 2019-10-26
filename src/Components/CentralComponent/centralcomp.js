@@ -1,18 +1,19 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container';
 import './centralcomp.css';
-import { Link, NavLink, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { MDBBtn } from 'mdbreact';
 
 const CentralComp = () => {
     return (
-        <Container fluid>
+        <Container>
             <div id="motto">
-                <p>Find your perfect trip, designed by insiders who knows and love their cities</p>
+                <p>Find your perfect trip, designed by insiders who knows and love their <Link to ="/cities"><strong>cities</strong></Link> </p>
             </div>
             <div id="center">
-                <a href="#"> <img id="centerLogo" src="./circled-right-2.png" alt="circled-right"/></a>
-                <Link to ="/cities"></Link>
+                <img id="centerLogo" src="./circled-right-2.png" alt="circled-right"/>                
             </div>
+
         </Container>        
     );
 }

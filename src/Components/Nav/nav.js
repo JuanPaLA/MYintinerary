@@ -1,34 +1,42 @@
+import React, { Component } from "react";
 import './nav.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Container from 'react-bootstrap/Container';
-import React from 'react';
-import { Link, NavLink, withRouter } from 'react-router-dom';
-import Jumbotron from 'react-bootstrap/Jumbotron';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { MDBNavbar, MDBNavbarNav, MDBNavbarToggler, MDBCollapse } from "mdbreact";
+import Jumbotron from "react-bootstrap/Jumbotron";
+import { Link } from 'react-router-dom';
 
+
+  class Nav extends Component {
+    state = {
+      isOpen: false
+    };
+
+    toggleCollapse = () => {
+      this.setState({ isOpen: !this.state.isOpen });
+    }
    
+    render() {
+      return (
+        
+          <Router>
+            <Jumbotron fluid>
+           <MDBNavbarNav left>
+            <MDBNavbar color="default-color" dark expand="md">
+              <MDBNavbarToggler onClick={this.toggleCollapse} />
+                <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
 
-function Nav () {
-    return(
-        <Jumbotron fluid id="supernav">                 
-        <nav class=" container-fluid navbar navbar-expand-sm bg-dark navbar-dark">          
-          <Link to = "/" class="navbar-brand" href="index.html">User</Link>          
-          <ul class="navbar-nav">          
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                Account
-              </a>              
-              <div class="dropdown-menu"> 
-              <ul>
-                <li><Link to = "/c-account">Create Account</Link></li>
-                <li><Link to = "/login">Login</Link></li>
-              </ul>
-              </div>
-            </li>
-          </ul>
-        </nav>
-
-        </Jumbotron>
-    )
-}
-    
-export default Nav;
+                  <Link to = "/login">Login</Link> <br></br>
+                   <Link to = "/c-account">Create Account</Link>  
+         
+                </MDBCollapse>
+              </MDBNavbar>
+          </MDBNavbarNav>
+          </Jumbotron>        
+        </Router>
+      
+        );
+      }
+    }
+      
+    export default  (Nav);

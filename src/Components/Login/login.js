@@ -1,9 +1,14 @@
 import React from 'react'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
 import { Link } from 'react-router-dom'; 
+import Header from '../Header/header';
+import Nav from '../Nav/nav';
 
 const Login = () => {
     return (
+      <div>
+        <Nav />
+        <Header />
         <MDBContainer>
         <MDBRow>
           <MDBCol md="6">
@@ -42,6 +47,7 @@ const Login = () => {
           </MDBCol>
         </MDBRow>
       </MDBContainer>
+      </div>
     );
 }
 

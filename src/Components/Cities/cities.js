@@ -3,6 +3,8 @@ import { MDBBtn } from 'mdbreact';
 import { Link } from 'react-router-dom'; 
 import Header from '../Header/header';
 import Nav from '../Nav/nav';
+import HomeButt from '../HomeButton/home';
+
 const Cities = () => {
     return (
       <div>
@@ -25,8 +27,8 @@ const Cities = () => {
         </li>
       </ul>
       
-      <Link to ="/"><strong>Home</strong></Link>
-      
+      {/* <Link to ="/"><strong>Home</strong></Link> */}
+      <HomeButt/>
       </div>
     );
 }

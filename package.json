@@ -1,41 +1,28 @@
 {
-  "name": "testing-react",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "bootstrap": "^4.3.1",
-    "jquery": "^3.4.1",
-    "mdbreact": "^4.21.1",
-    "popper.js": "^1.16.0",
-    "react": "^16.10.2",
-    "react-bootstrap": "^1.0.0-beta.14",
-    "react-dom": "^16.10.2",
-    "react-router-dom": "4.3.1",
-    "react-scripts": "3.2.0",
-    "reactstrap": "^8.1.1"
-  },
+  "name": "mern-travel-app",
+  "version": "1.0.0",
+  "description": "no description available",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanPaLA/MYintinerary.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuanPaLA/MYintinerary/issues"
+  },
+  "homepage": "https://github.com/JuanPaLA/MYintinerary#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.7"
   },
   "devDependencies": {
-    "react-alice-carousel": "^1.15.3"
+    "nodemon": "^1.19.4"
   }
 }

@@ -1,36 +1,43 @@
 import React from 'react'
-import { MDBBtn } from 'mdbreact';
-import { Link } from 'react-router-dom'; 
 import Header from '../Header/header';
 import Nav from '../Nav/nav';
 import HomeButt from '../HomeButton/home';
 
-const Cities = () => {
+class Cities extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      data: []
+    }
+  }
+
+  async componentDidMount() {
+    var datos = await fetch('http://localhost:5000/api/cities')
+      .then(datos => datos.json())
+    this.setState({
+      data: datos
+    })
+    console.log("lococooo", this.state.data);
+  }
+
+  render() {
     return (
       <div>
-        
         <Nav />
         <Header />
-      <h1>This is a list of cities</h1>
-      <ul>
-        <li>
-          city 1
-        </li>
-        <li>
-          city 2
-        </li>
-        <li>
-          city 3
-        </li>
-        <li>
-          city 4
-        </li>
-      </ul>
-      
-      {/* <Link to ="/"><strong>Home</strong></Link> */}
-      <HomeButt/>
+        <ul>
+          {this.state.data.map((city) => {
+            return (
+              <li key={city._id}>{city.city}</li>
+            )
+          })}
+        </ul>
+
       </div>
-    );
+    )
+  }
+
 }
+
 
 export default Cities; 

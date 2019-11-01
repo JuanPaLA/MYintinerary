@@ -1,5 +1,4 @@
 import React from 'react'
-import Jumbotron from 'react-bootstrap/Jumbotron';
 import './homebutton.css';
 import homeIcon from '../../resources/homeIcon.png';
 import { Link } from 'react-router-dom';

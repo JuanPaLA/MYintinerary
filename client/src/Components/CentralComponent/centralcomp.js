@@ -2,7 +2,7 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import './centralcomp.css';
 import { Link } from 'react-router-dom';
-import { MDBBtn } from 'mdbreact';
+
 
 const CentralComp = () => {
     return (

@@ -17,7 +17,7 @@ class Cities extends React.Component {
     this.setState({
       data: datos
     })
-    console.log("lococooo", this.state.data);
+    console.log("returning data => ", this.state.data);
   }
 
   render() {
@@ -32,7 +32,7 @@ class Cities extends React.Component {
             )
           })}
         </ul>
-
+          <HomeButt />
       </div>
     )
   }

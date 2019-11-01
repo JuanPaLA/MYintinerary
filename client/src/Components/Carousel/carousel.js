@@ -2,7 +2,7 @@ import React from 'react';
 import './carousel.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardImage,
-    MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn } from "mdbreact";
+    MDBCardBody, MDBCardText } from "mdbreact";
 
 function CarouselA()  {    
         return(                

@@ -36,7 +36,6 @@ class Cities extends React.Component {
       </div>
     )
   }
-
 }
 
 

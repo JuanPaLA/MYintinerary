@@ -7,8 +7,6 @@ import Header from './Components/Header/header';
 import CentralComp from './Components/CentralComponent/centralcomp';
 import HomeButt from './Components/HomeButton/home';
 
-
-
 function App() {
   return (
       <div>

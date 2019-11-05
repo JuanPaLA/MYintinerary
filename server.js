@@ -4,6 +4,7 @@ var cors = require('cors');
 const bodyParser = require('body-parser');
 
 const cities = require('./routes/api/cities');
+const itinerary = require('./routes/api/itineraries');
 
 var app = express();
 
@@ -19,6 +20,7 @@ mongoose
 
 //use routes
 app.use('/api/cities', cities);
+app.use('/api/itineraries', itinerary);
 
 const port = process.env.PORT || 5000
 

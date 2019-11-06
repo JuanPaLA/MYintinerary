@@ -10,9 +10,12 @@ const CentralComp = () => {
             <div id="motto">
                 <p>Find your perfect trip, designed by insiders who knows and love their <Link to ="/cities"><strong>cities</strong></Link> </p>
             </div>
+            <Link to ="/cities">
             <div id="center">
                 <img id="centerLogo" src="./circled-right-2.png" alt="circled-right"/>                
             </div>
+            </Link>
+            
 
         </Container>        
     );

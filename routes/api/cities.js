@@ -16,7 +16,9 @@ router.get('/', (req, res) => {
 // @desc    get All cities
 // @access  Public
 router.get('/:id', (req, res) => {
-    City.findById({_id : req.params._id})
+    console.log('signos de vida')
+    console.log(req.params)
+    City.findById({_id : req.params.id})
         .then(city => res.json(city))
 });
 

@@ -7,10 +7,17 @@ const City = require('../../model/City');
 // @route   GET api/cities
 // @desc    get All cities
 // @access  Public
-
 router.get('/', (req, res) => {
     City.find()
         .then(cities => res.json(cities))
+});
+
+// @route   GET api/cities/id:
+// @desc    get All cities
+// @access  Public
+router.get('/:id', (req, res) => {
+    City.findById({_id : req.params._id})
+        .then(city => res.json(city))
 });
 
 // @route   POST api/cities
@@ -28,7 +35,6 @@ router.post('/', (req, res) => {
 // @route   DELETE api/cities/:id
 // @desc    delete a citiy
 // @access  Public
-
 router.delete('/:id', (req, res) => {
     City.findById(req.params.id)
         .then(city => city.remove().then(() => res.json({ success: true })))

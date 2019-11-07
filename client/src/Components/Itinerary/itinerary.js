@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {Component } from 'react'
 import Header from '../Header/header';
 import Nav from '../Nav/nav';
 import HomeButt from '../HomeButton/home';
-import { Component } from 'react';
+
 
 // import { connect } from 'react-redux';
 // import { getCities } from '../../actions/citiesActions';        
@@ -14,7 +14,7 @@ class Itineraries extends Component {
             <div>
                 <Nav />
                 <Header />
-                <h3>This is a list of itineraries</h3>
+                <h3>This is a list of itineraries</h3>                
                 <HomeButt/>
             </div>            
         );

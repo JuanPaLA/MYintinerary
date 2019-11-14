@@ -1,9 +1,12 @@
 import React from 'react'
 import './header.css';
+import Logo from '../../resources/MYtineraryLogo.png';
 
 const Header = () => {
     return (
-        <header> </header>
+        <div>
+            <img src={Logo} alt="logo" className="img-fluid"/>
+        </div>
     );
 }
 

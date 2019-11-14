@@ -1,12 +1,18 @@
+//importsamos componentes básicos
 import React from 'react'
 import Header from '../Header/header';
 import Nav from '../Nav/nav';
 import HomeButt from '../HomeButton/home';
 
+//Importamos elementos de redux
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { getCities } from '../../actions/citiesActions';        
 import PropTypes from 'prop-types';
+
+//Importamos estilos
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { MDBRow, MDBCol} from "mdbreact";
 
 class Cities extends Component {
   constructor(props){
@@ -19,8 +25,10 @@ class Cities extends Component {
  componentDidMount() {
       this.props.getCities();
       console.log("Probando");
-      console.log(this.props.cities);
-      this.setState({ cityFilter: this.props.city })
+      console.log(this.props.city);
+      this.setState({ 
+        cityFilter: this.props.city 
+      })
   }
 
   filterCities = (e) => {
@@ -44,6 +52,19 @@ class Cities extends Component {
         <Header />
         <h1>This is a list of cities</h1>      
         
+        
+          {cities.map((city, i) => {
+            return (
+              <MDBRow>
+              <MDBCol>
+                <img key={i} src={city.urlPic} alt="thumbnail" className="img-thumbnail" />
+                <p className="text-center"><big>{city.city}</big></p>
+            </MDBCol>
+            </MDBRow>
+            )
+          })}
+        
+
         {/* <ul>
           {cities.map((city, i) => {
             return (

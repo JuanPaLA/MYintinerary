@@ -20,6 +20,9 @@ const ItinerarySchema = new Schema({
     },
     hashtag: {
         type: Array,        
+    },
+    cityId: {
+        type: mongoose.Schema.Types.ObjectId,
     }
 });
 

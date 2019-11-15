@@ -13,6 +13,8 @@ router.get('/', (req, res) => {
         .then(itineraries => res.json(itineraries))
 });
 
+
+
 // @route   POST api/itineraries
 // @desc    post a itinerary
 // @access  Public
@@ -24,7 +26,8 @@ router.post('/', (req, res) => {
         rating: req.body.rating,
         duration: req.body.duration,
         price: req.body.price,
-        hashtag: req.body.hashtag
+        hashtag: req.body.hashtag,
+        cityId: req.body.cityId
     });
     newItinerary.save().then(itinerary => res.json(itinerary));
 });
@@ -35,9 +38,18 @@ router.post('/', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     Itinerary.findById(req.params.id)
-        .then(itinerary => itinerary.remove().then(() => res.json({ success: true })))
-        .catch(err => res.status(404).json({ success: false }));
+        .then(itinerary => itinerary.remove().then(() => res.json({
+            success: true
+        })))
+        .catch(err => res.status(404).json({
+            success: false
+        }));
 });
 
+router.get('/:id', (req, res) => {
+    Itinerary.findById(req.params.id)
+        .then(itineraries => res.json(itineraries))
+        .then(data => console.log(data))
+})
 
-module.exports = router; 
+module.exports = router;

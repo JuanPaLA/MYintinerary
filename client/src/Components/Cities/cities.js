@@ -1,6 +1,6 @@
 //importsamos componentes básicos
 import React from 'react'
-import Header from '../Header/header';
+import { Link } from 'react-router-dom';
 import Nav from '../Nav/nav';
 import HomeButt from '../HomeButton/home';
 
@@ -13,6 +13,7 @@ import PropTypes from 'prop-types';
 //Importamos estilos
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { MDBRow, MDBCol} from "mdbreact";
+import './cities.css';
 
 class Cities extends Component {
   constructor(props){
@@ -49,10 +50,22 @@ class Cities extends Component {
     return (
       <div>
         <Nav />
-        <Header />
+        
         <h1>This is a list of cities</h1>      
-        
-        
+        <label htmlFor=""><strong>Filter by City</strong></label>
+       <input onChange={this.filterCities}></input>
+        <MDBRow>
+          <MDBCol>
+    {this.state.cityFilter.map((elem, i) => { return <Link to = "/itineraries/"> <div className="container">
+            <img key={i} src={elem.urlPic} alt="thumbnail" className="img-thumbnail"/>
+            <h2 className="centered">{elem.city}</h2>
+      </div>
+    </Link>
+  })}
+          </MDBCol>
+        </MDBRow>
+        <div id="footer">
+{/*         
           {cities.map((city, i) => {
             return (
               <MDBRow>
@@ -62,7 +75,7 @@ class Cities extends Component {
             </MDBCol>
             </MDBRow>
             )
-          })}
+          })} */}
         
 
         {/* <ul>
@@ -73,12 +86,7 @@ class Cities extends Component {
           })}
         </ul>
            */}
-        <label htmlFor=""><strong>Filter by City</strong></label>
-       <input onChange={this.filterCities}></input>
-        <ul id="list">
-            {this.state.cityFilter.map((elem, i) => { return <li className="card bg-dark text-white" key={i}>{elem.city} | {elem.country}</li> })}
-        </ul>
-        <div id="footer">
+        
           <HomeButt />
         </div>
           

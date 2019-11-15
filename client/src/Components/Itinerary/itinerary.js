@@ -33,13 +33,13 @@ class Itineraries extends Component {
                 <Nav />
                 <Header />
                 <h3>This is a list of itineraries</h3>
-                {/* <ul>
+                <ul>
                     {itineraries.map((elem, i) => {
                         return (
                         <li key={i}>{elem.title}</li>
                         )
                     })}
-                </ul>          */}
+                </ul>         
                 <HomeButt/>
             </div>            
         );
@@ -51,8 +51,11 @@ Itineraries.propTypes = {
     itinerary: PropTypes.array.isRequired
 }
 
-const mapStateToProps = (state) => ({
-    itinerary: state.itinerary.Itineraries
-})
+const mapStateToProps = (state) => {
+    console.log(state);
+    
+   return {itinerary: state.itinerary.itineraries}
+
+}
 
 export default connect(mapStateToProps, {getItineraries}) (Itineraries);

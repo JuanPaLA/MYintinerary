@@ -7,7 +7,9 @@ const HomeButt = () => {
     return (
         <div id="hb">
           <Link to = "/">
-            <img id="homeButton" src={homeIcon} alt="homeButton"/>
+          <div color="light" light expand="md">
+          <img id="homeButton" src={homeIcon} alt="homeButton"/>
+          </div>
           </Link>          
         </div>
     );

@@ -4,7 +4,7 @@ import Logo from '../../resources/MYtineraryLogo.png';
 
 const Header = () => {
     return (
-        <div>
+        <div className="header">
             <img src={Logo} alt="logo" className="img-fluid"/>
         </div>
     );

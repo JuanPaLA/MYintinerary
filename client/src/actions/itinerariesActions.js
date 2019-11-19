@@ -1,4 +1,5 @@
 import { GET_ITINERARIES } from './types';
+import { GET_ITINERARY} from './types';
 
 /*
 Esta es la acción.
@@ -11,6 +12,18 @@ export const getItineraries = () => async (dispatch) => {
     dispatch(
         {
             type: GET_ITINERARIES,
+            payload: datos
+        }
+    )
+}
+
+export const getItinerary = (id) => async (dispatch) => {
+    var datos = await fetch(`http://localhost:5000/api/itineraries/${id}`)
+    .then(datos => datos.json()).catch(err => console.log(err))
+
+    dispatch(
+        {
+            type: GET_ITINERARY,
             payload: datos
         }
     )

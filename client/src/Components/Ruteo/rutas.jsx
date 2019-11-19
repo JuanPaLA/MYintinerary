@@ -5,6 +5,7 @@ import ccAccount from '../CreateAccount/createaccount';
 import App from '../../App';
 import Cities from '../Cities/cities';
 import Itineraries from '../Itinerary/itinerary';
+import CityItinerary from '../CityItinerary/cityItinerary';
 
 const Routes  = (props) => {
 
@@ -17,6 +18,8 @@ const Routes  = (props) => {
             <Route path="/c-account" component={ccAccount}/>
             <Route path="/cities" component={Cities}/>
             <Route path="/itineraries" component={Itineraries}/>
+            <Route path="/cityitinerary/:id/:itinerariesId" component={CityItinerary}>
+            </Route>
           </Switch>
         </Router>
     )

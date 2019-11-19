@@ -1,13 +1,13 @@
-import { GET_ITINERARIES } from '../actions/types';
+import { GET_ITINERARIES, GET_ITINERARY } from '../actions/types';
 
 //Estado inicial hardcodeado. Esto debería venir de la API. 
 //Lo toma el reducer como parámetro. 
 const initialState = {
     itineraries: [
-        { title: 'Red Zone', profilePic: '', rating: '', duration: '', price: ''},
-        { title: 'The fifth avenue', profilePic: '', rating: '', duration: '', price: ''},
-        { title: 'La Rambla', profilePic: '', rating: '', duration: '', price: ''},
-        { title: 'Paseo de la Plaza', profilePic: '', rating: '', duration: '', price: ''}
+        { title: 'Inital title', profilePic: '', rating: '', duration: '', price: '', cityId: ''},
+        { title: 'Inital title', profilePic: '', rating: '', duration: '', price: '', cityId: ''},
+        { title: 'Inital title', profilePic: '', rating: '', duration: '', price: '', cityId: ''},
+        { title: 'Inital title', profilePic: '', rating: '', duration: '', price: '', cityId: ''}
     ]
 }
 
@@ -19,7 +19,13 @@ export default function(state = initialState, action){
             return {
                 ...state,
                 itineraries: action.payload
-            }                
+            }
+        case GET_ITINERARY:
+            return {
+                ...state,
+                itineraries: action.payload
+            }
+
         default:
             return state;
     }

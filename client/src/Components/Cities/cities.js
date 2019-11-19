@@ -25,8 +25,6 @@ class Cities extends Component {
 
  componentDidMount() {
       this.props.getCities();
-      console.log("Probando");
-      console.log(this.props.city);
       this.setState({ 
         cityFilter: this.props.city 
       })
@@ -46,22 +44,24 @@ class Cities extends Component {
 
 
   render() {
-    const  cities  = this.props.city;
     return (
       <div>
         <Nav />
         
-        <h1>This is a list of cities</h1>      
+        <h4>MYitineraries cities!</h4>      
         <label htmlFor=""><strong>Filter by City</strong></label>
        <input onChange={this.filterCities}></input>
         <MDBRow>
           <MDBCol>
-    {this.state.cityFilter.map((elem, i) => { return <Link to = "/itineraries/"> <div className="container">
-            <img key={i} src={elem.urlPic} alt="thumbnail" className="img-thumbnail"/>
-            <h2 className="centered">{elem.city}</h2>
-      </div>
-    </Link>
-  })}
+              {this.state.cityFilter.map((elem, i) => { 
+                return (
+                  <Link to ={`/cityitinerary/${elem._id}/${elem.itinerariesId}`}> 
+                  <div className="container">
+                      <img key={i} src={elem.urlPic} alt="thumbnail" className="img-thumbnail"/>
+                      <h2 className="centered">{elem.city}</h2>
+                  </div>
+                  </Link>
+              )})}
           </MDBCol>
         </MDBRow>
         <div id="footer">

@@ -13,6 +13,9 @@ const CitySchema = new Schema({
     },
     urlPic: {
         type: String
+    },
+    itinerariesId: {
+        type: Array
     }
 });
 

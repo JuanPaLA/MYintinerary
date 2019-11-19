@@ -3,7 +3,6 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
   NavLink,
@@ -21,20 +20,23 @@ const Nav2 = (props) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-      <UncontrolledDropdown nav inNavbar >
+      
+      <UncontrolledDropdown nav inNavbar>   
         <DropdownToggle nav caret>
-        <i class="far fa-user" size="4x" ></i>
-              </DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem>
-                  Option 1
-                </DropdownItem>
-                <DropdownItem>
-                  Option 2
-                </DropdownItem>
-                </DropdownMenu>
+          <i class="fas fa-user" size="4x" ></i>
+        </DropdownToggle>
+        
+          <DropdownMenu>
+            <DropdownItem>
+              Option 1
+            </DropdownItem>
+            <DropdownItem>
+              Option 2
+            </DropdownItem>
+          </DropdownMenu>
         </UncontrolledDropdown>
-        <NavbarToggler onClick={toggle} left />
+
+        <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>

@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     console.log('signos de vida')
     console.log(req.params)
-    City.findById({_id : req.params.id})
+    City.findById({ _id: req.params.id })
         .then(city => res.json(city))
 });
 

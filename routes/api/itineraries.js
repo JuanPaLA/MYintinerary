@@ -58,6 +58,15 @@ router.get('/:id', (req, res) => {
         .then(data => console.log(data))
 })
 
+router.get('/city/:idCity', (req, res) => {
+    console.log(req.params.idCity);
+
+    // console.log('get intineraries por city');
+    Itinerary.find({ cityId: req.params.idCity })
+        .catch(err => console.log(err))
+        .then(itineraries => res.json(itineraries))
+})
+
 
 // @route   GET api/itineraries/:cityId --> fetch it by "cityId"
 // @desc    get a itinerary

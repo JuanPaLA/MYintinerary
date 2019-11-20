@@ -15,7 +15,10 @@ const CitySchema = new Schema({
         type: String
     },
     itinerariesId: {
-        type: Array
+        type: [{
+            id: Schema.Types.ObjectId
+        }
+        ]
     }
 });
 

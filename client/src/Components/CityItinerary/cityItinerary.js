@@ -13,7 +13,20 @@ import PropTypes from 'prop-types';
 //Importamos estilos
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { MDBCol, MDBRow, MDBContainer, MDBCard, MDBCardUp, MDBCardBody, MDBAvatar, MDBRotatingCard, MDBIcon } from "mdbreact";
+import { MDBBtn, MDBCollapse } from "mdbreact";
 import './cityItinerary.css';
+import {
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    Nav,
+    NavItem,
+    NavLink,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem } from 'reactstrap';
+
 
 class CityItinerary extends Component {
     constructor(props) {
@@ -21,9 +34,12 @@ class CityItinerary extends Component {
         this.state = {
             selectedCity: [],
             cities: [],
-            itinerarios: []
+            itinerarios: [],
         }
     }
+
+    
+    
 
     componentDidMount() {
         //---Capturo id de la ciudad previamente elegida y la asigno a variable
@@ -38,10 +54,8 @@ class CityItinerary extends Component {
         this.setState({
             selectedCity: this.props.city
         })
-
-        // console.log("PROBANDO DESDE ESTADO");
-        // console.log(this.state.itinerarios);
     }
+    
 
     render() {
         //--LA CIUDAD
@@ -66,22 +80,45 @@ class CityItinerary extends Component {
 
                 {/* -----------Itineraries CARD---------- */}
 
-
+                
                 {this.props.itinerary.map(elem => (
-                    <MDBContainer className="mdbcarcont">
-                        <MDBRow>
-                            <i class="fas fa-user" size="4x" ></i>
-                        </MDBRow>
-                        <MDBRow>
-                            <h5>{elem.title}></h5>
-                            <p>Algo</p>
-                        </MDBRow>
-                    </MDBContainer>
+                    <div className="container-fluid">
+                        <div className="row">
+                            <div className="col-3">
+                                <i class="fas fa-user" size="4x" ></i>
+                            </div>
+                            <div className="col-9">
+                                <h7>{elem.title}</h7>
+                                <div className="row">
+                                    <p><small>Likes: {elem.rating}</small></p>
+                                    <p><small>|  Hourse: {elem.duration}</small></p>
+                                    <p><small>|  Price: ${elem.price}</small></p>
+                                </div>
+                                {this.props.itinerary.map(hash => (
+                                    <div className="row">
+                                        <p><small>{hash.hashtag}</small></p>
+                                    </div>
+                                ))}
+                                
+                            </div>
+                        </div>
+                            
+                        <div>
+                        {/* <button onClick={this.handleCollapse}>
+                            {this.state.isOpen ? 'Ver más' : 'OFF'}
+                        </button> */}
+
+
+
+                        </div>
+                    </div>
+                        
+                    
                 ))}
+                
 
 
-
-
+            <HomeButt />
             </div>
         );
     }

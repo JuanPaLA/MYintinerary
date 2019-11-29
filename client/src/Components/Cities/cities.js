@@ -54,6 +54,7 @@ class Cities extends Component {
                 <MDBRow>
                     <MDBCol>
                         {this.state.cityFilter.map((elem, i) => {
+                            console.log(this.state)
                             return (
                                 <Link to={`/cityitinerary/${elem._id}`}>
                                     <div className="container">

@@ -4,6 +4,8 @@ import React from 'react';
 import HomeButt from '../HomeButton/home';
 import Activities from '../Activity/activity';
 
+import { Link } from 'react-router-dom';
+
 //Importamos elementos de redux
 import { Component } from 'react';
 import { connect } from 'react-redux';
@@ -23,42 +25,42 @@ class CityItinerary extends Component {
       selectedCity: [],
       cities: [],
       itinerarios: [],
-      open: false
+      open: false,
+      id: '',
+      code: '5dc1d63e1c9d44000005723c'
     };
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  toggle() {
-    this.setState({
-      open: !this.state.open
-    });
+
+
+  handleClick(e){
+    this.setState(prevState => ({
+      open: !prevState.open
+    
+
+    }))
+    
   }
 
   async componentDidMount() {
     //---Capturo id de la ciudad previamente elegida y la asigno a variable
     let cityId = this.props.match.params.id;
-    // console.log(cityId);
 
     //---Traigo los datos de la ciudad con el método getCity(ID)
     await this.props.getCity(cityId);
     //---Traigo los datos de los itinerarios de la ciudad con el método getItinerary (modificado para traerlos desde city y no de un itinerario)
-    this.props.getItinerary(cityId);
-
-    this.setState({
-      selectedCity: this.props.city
-    });
+    await this.props.getItinerary(cityId);
+    
   }
 
   render() {
-    //--LA CIUDAD
-    // console.log(this.props.city);
-    // console.log(this.props.itinerary);
-    // const cities = this.props.city;
-    // console.log(JSON.stringify(cities, null, 2));
-    //--SUS ITINERARIOS
-
+    
     return (
       <div>
         {/* -----------Cities CARD---------- */}
+        <div className="contaniner border p-2">
+
         <MDBRow>
           <MDBCol>
             <div className='container'>
@@ -73,70 +75,63 @@ class CityItinerary extends Component {
           </MDBCol>
         </MDBRow>
 
+        </div>
+        
+
         {/* -----------Itineraries CARD---------- */}
 
-        {this.props.itinerary.map(elem => (
-          <div className='container-fluid'>
+        {this.props.itinerary.map((elem, i) => (
+          <div className='container-fluid border my-1'>
             <div className='row'>
               <div className='col-3'>
                 <i class='fas fa-user' size='4x'></i>
               </div>
               <div className='col-9'>
-                <h6>{elem.title}</h6>
-                <div className='row'>
+                <h6 style={{}}>{elem.title}</h6>
+                <div className='row' style={{ marginTop:'-2vh'}}>
                   <p>
                     <small>Likes: {elem.rating}</small>
                   </p>
                   <p>
-                    <small>| Hourse: {elem.duration}</small>
+                    <small>  Hours: {elem.duration}</small>
                   </p>
                   <p>
-                    <small>| Price: ${elem.price}</small>
+                    <small>  Price: ${elem.price}</small>
                   </p>
+                  
                 </div>
                 {this.props.itinerary.map(hash => {
-                  // console.log(hash.hashtag);
                   return (
                     <div className='row'>
                       {hash.hashtag ? (
-                        hash.hashtag.map(elem => (
-                          <p>
-                            <small>{elem}</small>
+                        hash.hashtag.map((elem, i) => (
+                          <p style={{marginRight:'10px', marginTop:'-4vh'}}>
+                            <small> &nbsp; {elem}</small>
                           </p>
                         ))
                       ) : (
-                        <div> </div>
+                        <div> 
+
+                        </div>
                       )}
                     </div>
                   );
                 })}
 
                 {/* ------- collapsable ------- */}
-                {/* <div>
-                  <p>
-                    <button
-                      class='btn btn-primary'
-                      type='button'
-                      data-toggle='collapse'
-                      data-target='#collapseExample'
-                      aria-expanded='false'
-                      aria-controls='collapseExample'
-                    >
-                      Button with data-target
-                    </button>
-                  </p>
-                  <div class='collapse' id='collapseExample'>
-                    <div class='card card-body'>
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life
-                      accusamus terry richardson ad squid.
-                    </div>
-                  </div>
-                </div> */}
+                {/* <button onClick={this.handleClick}>
+                    {this.state.open ? 'ON' : 'OFF'}
+                </button> */}
+             
+                  
               </div>
+              <div className="container px-200" >
+                  <Activities id={this.props.itinerary[i]._id}/>        
+                </div>
             </div>
           </div>
         ))}
-        <Activities />
+        
         <HomeButt />
       </div>
     );
@@ -152,7 +147,7 @@ CityItinerary.propTypes = {
 };
 
 const mapStateToProps = state => {
-  // console.log(state);
+  console.log(state);
   return {
     city: state.city.cities,
     itinerary: state.itinerary.itineraries

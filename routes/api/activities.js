@@ -7,20 +7,19 @@ const Activity = require('../../model/Activity');
 // @route   GET api/activities
 // @desc    get All activity
 // @access  Public
-
 router.get('/', (req, res) => {
-  Activity.find().then(activities => res.json(activities));
+  Activity.find()
+    .then(activities => res.json(activities));
 });
 
 // @route   POST api/itineraries
 // @desc    post a itinerary
 // @access  Public
-
 router.post('/', (req, res) => {
   const newActivity = new Activity({
     details: req.body.details,
-    title: req.body.title,
     comments: req.body.comments,
+    title: req.body.title,
     pic: req.body.pic,
     itineraryId: req.body.itineraryId
   });

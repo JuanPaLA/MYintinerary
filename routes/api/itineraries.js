@@ -7,7 +7,6 @@ const Itinerary = require('../../model/Itinerary');
 // @route   GET api/itineraries
 // @desc    get All itinerary
 // @access  Public
-
 router.get('/', (req, res) => {
     Itinerary.find()
         .then(itineraries => res.json(itineraries))
@@ -18,7 +17,6 @@ router.get('/', (req, res) => {
 // @route   POST api/itineraries
 // @desc    post a itinerary
 // @access  Public
-
 router.post('/', (req, res) => {
     const newItinerary = new Itinerary({
         title: req.body.title,

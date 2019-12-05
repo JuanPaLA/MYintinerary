@@ -18,6 +18,8 @@ router.get('/', (req, res) => {
 // @desc    post a itinerary
 // @access  Public
 router.post('/', (req, res) => {
+    console.log("POST ITINERARY")
+    console.log(req.body.title)
     const newItinerary = new Itinerary({
         title: req.body.title,
         profilePic: req.body.profilePic,

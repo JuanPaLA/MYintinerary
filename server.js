@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const cities = require('./routes/api/cities');
 const itinerary = require('./routes/api/itineraries');
 const activity = require('./routes/api/activities');
+const user = require('./routes/api/users');
 
 var app = express();
 
@@ -23,6 +24,7 @@ mongoose
 app.use('/api/cities', cities);
 app.use('/api/itineraries', itinerary);
 app.use('/api/activities', activity);
+app.use('/api/users', user);
 
 const port = process.env.PORT || 5000;
 

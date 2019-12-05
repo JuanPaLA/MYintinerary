@@ -23,44 +23,23 @@ class CityItinerary extends Component {
     super(props);
     this.state = {
       selectedCity: [],
-      cities: [],
-      itinerarios: [],
-      open: false,
-      id: '',
-      code: '5dc1d63e1c9d44000005723c'
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-
-
-  handleClick(e){
-    this.setState(prevState => ({
-      open: !prevState.open
-    
-
-    }))
-    
+    };    
   }
 
   async componentDidMount() {
     //---Capturo id de la ciudad previamente elegida y la asigno a variable
     let cityId = this.props.match.params.id;
-
     //---Traigo los datos de la ciudad con el método getCity(ID)
     await this.props.getCity(cityId);
     //---Traigo los datos de los itinerarios de la ciudad con el método getItinerary (modificado para traerlos desde city y no de un itinerario)
     await this.props.getItinerary(cityId);
-    
   }
 
   render() {
-    
     return (
       <div>
         {/* -----------Cities CARD---------- */}
         <div className="contaniner border p-2">
-
         <MDBRow>
           <MDBCol>
             <div className='container'>
@@ -74,9 +53,7 @@ class CityItinerary extends Component {
             <h6>Availabe MYItineraries</h6>
           </MDBCol>
         </MDBRow>
-
-        </div>
-        
+        </div>        
 
         {/* -----------Itineraries CARD---------- */}
 
@@ -97,8 +74,7 @@ class CityItinerary extends Component {
                   </p>
                   <p>
                     <small>  Price: ${elem.price}</small>
-                  </p>
-                  
+                  </p>                  
                 </div>
                 {this.props.itinerary.map(hash => {
                   return (
@@ -118,16 +94,10 @@ class CityItinerary extends Component {
                   );
                 })}
 
-                {/* ------- collapsable ------- */}
-                {/* <button onClick={this.handleClick}>
-                    {this.state.open ? 'ON' : 'OFF'}
-                </button> */}
-             
-                  
               </div>
               <div className="container px-200" >
                   <Activities id={this.props.itinerary[i]._id}/>        
-                </div>
+              </div>
             </div>
           </div>
         ))}

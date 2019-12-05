@@ -10,6 +10,9 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem } from 'reactstrap';
+  import { Link } from 'react-router-dom';
+import './nav.css';
+
 
 const Nav2 = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,6 +27,7 @@ const Nav2 = (props) => {
       <UncontrolledDropdown nav inNavbar>   
         <DropdownToggle nav caret>
           <i class="fas fa-user" size="4x" ></i>
+          {/* <img id="litUser" src="http://www.iconarchive.com/download/i94391/bokehlicia/captiva/user.ico" alt="lticon"/> */}
         </DropdownToggle>
         
           <DropdownMenu>
@@ -40,10 +44,14 @@ const Nav2 = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink href="#">Login</NavLink>
+            <Link to="/c-account">
+                Create Account
+              </Link>
             </NavItem>            
             <NavItem>
-              <NavLink href="#">Create Account</NavLink>
+            <Link to="/login">
+                Login
+            </Link>
             </NavItem>            
           </Nav>
         </Collapse>

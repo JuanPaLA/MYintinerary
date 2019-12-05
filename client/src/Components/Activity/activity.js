@@ -9,6 +9,7 @@ import { getActivity } from '../../actions/activitiesActions';
 import PropTypes from 'prop-types';
 
 /*Importamos estilos */
+import '../CityItinerary/cityItinerary.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardImage,
   MDBCardBody, MDBCardText } from "mdbreact";
@@ -47,24 +48,31 @@ class Activities extends Component {
 
   render() {
     return (
-      <div>
+      
 
         <div className="container">
-          <a class="btn btn-light border" data-toggle="collapse" data-target="#actividades"><p style={{color:'black'}}><small>{this.props.id}</small></p></a>
+          <a className="btn btn-outline-info" data-toggle="collapse" data-target={"#actividades"}><p style={{color:'black'}}><small>{this.props.id}</small></p></a>
           <div id="actividades" className="collapse container">
                 {this.props.activity.map((elem) => (
+                <div className="row">
+                  <MDBCol size="4">
+                    
+                    <MDBCard>
+                        <img className="img-thumbnail" src={elem.pic} />
+                        <h6 className="centered" >{elem.title}</h6>
+                    </MDBCard>
 
-                  <div>
-                      <MDBCardImage className="img-fluid" src={elem.pic} />
-                  </div>
-
+                  </MDBCol>                    
+                </div> 
           ))}
-        </div>
-      </div>       
+         
+      </div>
       </div>
     );
   }
 }
+
+// id={`activity${i}`
 
 Activities.propTypes = {
   getActivities: PropTypes.func.isRequired,
@@ -80,27 +88,3 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps, { getActivities, getActivity })(Activities);
-
-// export default Activities;
-
-
-/*
-
-                /* <MDBContainer>
-                  <MDBCarousel>
-                    <MDBCarouselItem itemdId={i}>
-
-                      <MDBRow>
-                        <MDBCol size="6">
-                          <MDBCard>
-                          <MDBCardImage className="img-fluid" src={elem.pic} />
-                          </MDBCard>
-                        </MDBCol>
-                      </MDBRow>
-
-                    </MDBCarouselItem>
-                  </MDBCarousel>
-                </MDBContainer> */
-
-
-

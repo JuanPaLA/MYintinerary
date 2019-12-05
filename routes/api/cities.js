@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 });
 
 // @route   GET api/cities/id:
-// @desc    get All cities
+// @desc    get A city
 // @access  Public
 router.get('/:id', (req, res) => {
     console.log('signos de vida')
@@ -27,10 +27,15 @@ router.get('/:id', (req, res) => {
 // @access  Public
 
 router.post('/', (req, res) => {
+    console.log("Vital signs");
+    console.log(req.body.city)
+    console.log(req.body.pic)
     const newCity = new City({
         country: req.body.country,
-        city: req.body.city
+        city: req.body.city,
+        urlPic: req.body.urlPic
     });
+    console.log(newCity)
     newCity.save().then(city => res.json(city));
 });
 

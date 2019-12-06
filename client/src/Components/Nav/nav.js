@@ -26,7 +26,7 @@ const Nav2 = (props) => {
       
       <UncontrolledDropdown nav inNavbar>   
         <DropdownToggle nav caret>
-          <i class="fas fa-user" size="4x" ></i>
+          <i className="fas fa-user fa-2x"></i>
           {/* <img id="litUser" src="http://www.iconarchive.com/download/i94391/bokehlicia/captiva/user.ico" alt="lticon"/> */}
         </DropdownToggle>
         

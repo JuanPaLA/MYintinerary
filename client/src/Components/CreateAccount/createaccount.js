@@ -59,11 +59,6 @@ const ccAccount = () => {
                         <option>United States</option>
                     </Input>
                 </FormGroup>
-
-                <FormGroup>
-                    <Label for="exampleText">Text Area</Label>
-                    <Input type="textarea" name="text" id="exampleText" />
-                </FormGroup>
                 
 
                 <FormGroup check>

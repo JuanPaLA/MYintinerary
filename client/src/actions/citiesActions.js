@@ -17,7 +17,7 @@ export const getCities = () => async dispatch => {
 };
 
 export const getCity = id => async dispatch => {
-  var datos = await fetch(`http://localhost:5000/api/cities/${id}`)
+  var datos = await fetch(`http://localhost:5000/api/city/${id}`)
     .then(datos => datos.json())
     .catch(err => console.log(err));
   // console.log(datos);

@@ -17,12 +17,22 @@ export const getItineraries = () => async dispatch => {
 };
 
 export const getItinerary = id => async dispatch => {
-  var datos = await fetch(`http://localhost:5000/api/itineraries/city/${id}`)
-    .then(datos => datos.json())
+ console.log(id)
+  // dispatch({
+  //   type: GET_ITINERARY,
+  //   payload: {}
+  // });
+  var datos = await fetch(`http://localhost:5000/api/itineraries/${id}`)
+    .then(datos => datos.json()).then((datos)=>{
+      console.log("pepe")
+      dispatch({
+        type: GET_ITINERARY,
+        payload: datos
+      });
+    })
     .catch(err => console.log(err));
 
-  dispatch({
-    type: GET_ITINERARY,
-    payload: datos
-  });
+console.log(datos);
+
+  
 };

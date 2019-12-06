@@ -2,6 +2,7 @@
 import React from 'react';
 
 //Importamos elementos de redux
+import axios from "axios"
 import { Component } from 'react';
 import { connect } from 'react-redux';
 import { getActivities } from '../../actions/activitiesActions';
@@ -19,41 +20,41 @@ class Activities extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      itId: ''
+      flag:false,
+      itId: props.id,
+      inithialActivity:[]
     };
     
   }
 
   async  componentDidMount() {
-    // await this.props.getActivity('5dc1d63e1c9d44000005723c');
-    
-    let itineraryId = this.props.id;
-    
-    console.log(this.props.id);
-    console.log(itineraryId);
-
-    if(this.props.id){
-      console.log("acá hay un valor", this.props.id) ;
-      itineraryId = this.props.id; 
-      console.log(itineraryId);      
-      await this.props.getActivity(itineraryId);
+    // await this.props.getActivity(this.props.id);
+    axios.get(`http://localhost:5000/api/activities/itinerary/${this.state.itId}`).then((data)=>{
+      
       this.setState({
-        itId: itineraryId
-      })
-      console.log(this.state.itId)
-    }
+       
+        inithialActivity:data.data,
+        flag:true
 
-    // await this.props.getActivity(this.state.itId);
+      })
+      console.log(this.state)
+    })
+    
+    
   }
 
   render() {
+    console.log(this.props, "pepe")
+    console.log(this.state,"pepito")
+    
     return (
       
 
         <div className="container">
-          <a className="btn btn-outline-info" data-toggle="collapse" data-target={"#actividades"}><p style={{color:'black'}}><small>{this.props.id}</small></p></a>
+          <a className="btn btn-outline-info" data-toggle="collapse" data-target={"#actividades"}><p style={{color:'black'}}><small>{this.state.itId}</small></p></a>
           <div id="actividades" className="collapse container">
-                {this.props.activity.map((elem) => (
+                {this.state.flag ?
+                this.state.inithialActivity.map((elem) => (
                 <div className="row">
                   <MDBCol size="4">
                     
@@ -64,7 +65,7 @@ class Activities extends Component {
 
                   </MDBCol>                    
                 </div> 
-          ))}
+          )):<p>Pepe</p>}
          
       </div>
       </div>
@@ -74,17 +75,20 @@ class Activities extends Component {
 
 // id={`activity${i}`
 
-Activities.propTypes = {
-  getActivities: PropTypes.func.isRequired,
-  getActivity: PropTypes.func.isRequired,
-  activity: PropTypes.array.isRequired
-};
+// Activities.propTypes = {
+//   getActivities: PropTypes.func.isRequired,
+//   getActivity: PropTypes.func.isRequired,
+//   activity: PropTypes.array.isRequired,
+//   flag: PropTypes.bool.isRequired
+// };
 
-const mapStateToProps = state => {
-  // console.log(state.activity);
-  return {
-    activity: state.activity.activities
-  };
-};
+// const mapStateToProps = state => {
+//   // console.log(state.activity);
+//   return {
+//     activity: state.activity.activities,
+//     flag: state.activity.flag
+//   };
+// };
 
-export default connect(mapStateToProps, { getActivities, getActivity })(Activities);
+export default Activities;
+// connect(mapStateToProps, { getActivities, getActivity })

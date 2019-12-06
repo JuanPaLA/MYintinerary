@@ -7,7 +7,7 @@ const City = require('../../model/City');
 // @route   GET api/cities
 // @desc    get All cities
 // @access  Public
-router.get('/', (req, res) => {
+router.get('/cities', (req, res) => {
     City.find()
         .then(cities => res.json(cities))
 });
@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 // @route   GET api/cities/id:
 // @desc    get A city
 // @access  Public
-router.get('/:id', (req, res) => {
+router.get('/city/:id', (req, res) => {
     console.log('signos de vida')
     console.log(req.params)
     City.findById({ _id: req.params.id })
@@ -26,10 +26,9 @@ router.get('/:id', (req, res) => {
 // @desc    post a citiy
 // @access  Public
 
-router.post('/', (req, res) => {
+router.post('/city', (req, res) => {
     console.log("Vital signs");
-    console.log(req.body.city)
-    console.log(req.body.pic)
+    console.log(req.body)    
     const newCity = new City({
         country: req.body.country,
         city: req.body.city,

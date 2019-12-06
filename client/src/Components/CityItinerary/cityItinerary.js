@@ -36,6 +36,7 @@ class CityItinerary extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <div>
         {/* -----------Cities CARD---------- */}
@@ -56,8 +57,8 @@ class CityItinerary extends Component {
         </div>        
 
         {/* -----------Itineraries CARD---------- */}
-
-        {this.props.itinerary.map((elem, i) => (
+{this.props.flag?
+        this.props.itinerary.map((elem, i) => (
           <div className='container-fluid border my-1'>
             <div className='row'>
               <div className='col-3'>
@@ -100,27 +101,36 @@ class CityItinerary extends Component {
               </div>
             </div>
           </div>
-        ))}
+        )
+       
+          
+      
         
+        ):null
+        }
+        
+       
         <HomeButt />
       </div>
-    );
+    )
   }
 }
 
 CityItinerary.propTypes = {
   getCity: PropTypes.func.isRequired,
-  city: PropTypes.array.isRequired,
+  city: PropTypes.object.isRequired,
+  flag: PropTypes.bool.isRequired,
 
   getItinerary: PropTypes.func.isRequired,
   itinerary: PropTypes.array.isRequired
 };
 
 const mapStateToProps = state => {
-  console.log(state);
+  // console.log(state);
   return {
     city: state.city.cities,
-    itinerary: state.itinerary.itineraries
+    itinerary: state.itinerary.itineraries,
+    flag: state.itinerary.flag
   };
 };
 

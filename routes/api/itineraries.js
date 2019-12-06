@@ -7,7 +7,7 @@ const Itinerary = require('../../model/Itinerary');
 // @route   GET api/itineraries
 // @desc    get All itinerary
 // @access  Public
-router.get('/', (req, res) => {
+router.get('/itineraries', (req, res) => {
     Itinerary.find()
         .then(itineraries => res.json(itineraries))
 });
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 // @route   POST api/itineraries
 // @desc    post a itinerary
 // @access  Public
-router.post('/', (req, res) => {
+router.post('/itinerary', (req, res) => {
     console.log("POST ITINERARY")
     console.log(req.body.title)
     const newItinerary = new Itinerary({
@@ -37,7 +37,7 @@ router.post('/', (req, res) => {
 // @desc    delete a itinerary
 // @access  Public
 
-router.delete('/:id', (req, res) => {
+router.delete('/itinerary/:id', (req, res) => {
     Itinerary.findById(req.params.id)
         .then(itinerary => itinerary.remove().then(() => res.json({
             success: true
@@ -52,18 +52,20 @@ router.delete('/:id', (req, res) => {
 // @desc    get a itinerary
 // @access  Public
 
-router.get('/:id', (req, res) => {
+router.get('/itinerary/:id', (req, res) => {
+    
     Itinerary.findById(req.params.id)
-        .then(itineraries => res.json(itineraries))
-        .then(data => console.log(data))
+        .then(itineraries => itineraries.json(itineraries))
+        .then(data => res.json(data)).catch((err)=>console.log(err))
+     
 })
 
-router.get('/city/:idCity', (req, res) => {
-    console.log(req.params.idCity);
+router.get('/itineraries/:idCity', (req, res) => {
+    // console.log(req.params.idCity);
 
     // console.log('get intineraries por city');
     Itinerary.find({ cityId: req.params.idCity })
-        .catch(err => console.log(err))
+        .catch(err => console.log("juan perez"))
         .then(itineraries => res.json(itineraries))
 })
 

@@ -7,15 +7,17 @@ const Activity = require('../../model/Activity');
 // @route   GET api/activities
 // @desc    get All activity
 // @access  Public
-router.get('/', (req, res) => {
+router.get('/activities', (req, res) => {
+  console.log("hay vida")
   Activity.find()
     .then(activities => res.json(activities));
+    
 });
 
 // @route   POST api/itineraries
 // @desc    post a itinerary
 // @access  Public
-router.post('/', (req, res) => {
+router.post('/activity', (req, res) => {
   const newActivity = new Activity({
     details: req.body.details,
     comments: req.body.comments,
@@ -30,7 +32,7 @@ router.post('/', (req, res) => {
 // @desc    delete a activity
 // @access  Public
 
-router.delete('/:id', (req, res) => {
+router.delete('/activity/:id', (req, res) => {
   Activity.findById(req.params.id)
     .then(activity =>
       activity.remove().then(() =>
@@ -50,14 +52,14 @@ router.delete('/:id', (req, res) => {
 // @desc    get a activity
 // @access  Public
 
-router.get('/:id', (req, res) => {
+router.get('/activity/:id', (req, res) => {
   Activity.findById(req.params.id)
     .then(activities => res.json(activities))
     .then(data => console.log(data));
 });
 
 /*¿Aha? */
-router.get('/itinerary/:idItinerary', (req, res) => {
+router.get('/activities/itinerary/:idItinerary', (req, res) => {
   console.log(req.params.idItinerary);
 
   // console.log('get activities por itinerary');

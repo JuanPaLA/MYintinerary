@@ -10,7 +10,7 @@ const user = require('./routes/api/users');
 
 var app = express();
 
-app.use(bodyParser.json());
+app.use(bodyParser());
 app.use(cors());
 
 const db = require('./config/keys').mongoURI;
@@ -21,10 +21,10 @@ mongoose
   .catch(err => console.log(err));
 
 //use routes
-app.use('/api/cities', cities);
-app.use('/api/itineraries', itinerary);
-app.use('/api/activities', activity);
-app.use('/api/users', user);
+app.use('/api', cities);
+app.use('/api', itinerary);
+app.use('/api', activity);
+app.use('/api', user);
 
 const port = process.env.PORT || 5000;
 

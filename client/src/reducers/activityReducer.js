@@ -6,7 +6,7 @@ const initialState = {
   activities: [
     {
       title: 'Sacred Family',
-      pic: 'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjf1KihvpDmAhXMH7kGHVzeBFYQjRx6BAgBEAQ&url=https%3A%2F%2Ftravel.usnews.com%2FBarcelona_Spain%2FThings_To_Do%2FChurch_of_the_Sacred_Family_Templo_Expiatorio_de_la_Sagrada_Familia_26915%2F&psig=AOvVaw3pFnrdbHof2FDuIaUUEhCC&ust=1575153467279274',
+      pic: 'https://cdn.getyourguide.com/img/tour_img-1533331-146.jpg',
       details: '',
       comments: '',
       itineraryId: ''
@@ -24,8 +24,9 @@ const initialState = {
       details: '',
       comments: '',
       itineraryId: ''
-    }
-  ]
+    }    
+  ],  
+    flag: false
 };
 
 /*Éste es el reducer en sí mismo. Toma un estado y una acción
@@ -36,12 +37,12 @@ export default function(state = initialState, action) {
     case GET_ACTIVITIES:
       return {
         ...state,
-        activities: action.payload
+        activities: action.payload, flag: true
       };
     case GET_ACTIVITY:
       return {
         ...state,
-        activities: action.payload
+        activities: action.payload, flag: true
       };
     default:
       return state;

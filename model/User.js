@@ -8,11 +8,13 @@ const UserSchema = new Schema ({
     },
     email: {
         type: String,
-        value: "default@default.com"
+        
     },
     password: {
+        type: String     
+    },
+    country : {
         type: String
-     
     }
 });
 

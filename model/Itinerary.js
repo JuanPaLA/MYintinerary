@@ -12,7 +12,7 @@ const ItinerarySchema = new Schema({
   rating: {
     type: Number
   },
-  durantion: {
+  duration: {
     type: Number
   },
   price: {
@@ -22,7 +22,8 @@ const ItinerarySchema = new Schema({
     type: Array
   },
   cityId: {
-    type: mongoose.Schema.Types.ObjectId
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "cities"
   }
 });
 

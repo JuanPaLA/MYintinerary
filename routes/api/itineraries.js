@@ -74,8 +74,8 @@ router.get('/itineraries/:idCity', (req, res) => {
 // @desc    get a itinerary
 // @access  Public
 
-router.get('/:cityId', (req, res) => {
-    Itinerary.findOne(req.params.cityId)
+router.get('/itinerary/:cityId', (req, res) => {
+    Itinerary.findOne({cityId : req.params.cityId})
         .then(itineraries => res.json(itineraries))
         .then(data => console.log(data))
 })

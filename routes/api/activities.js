@@ -68,7 +68,7 @@ router.get('/activities/itinerary/:idItinerary', (req, res) => {
     .then(activities => res.json(activities));
 });
 
-router.get('/:itineraryId', (req, res) => {
+router.get('/activity/:itineraryId', (req, res) => {
   Activity.findOne(req.params.itineraryId)
     .then(activities => res.json(activities))
     .then(data => console.log(data));

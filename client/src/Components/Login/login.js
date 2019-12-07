@@ -10,22 +10,26 @@ class Login extends React.Component {
   constructor(props) {
     super(props);
       this.state = {
-          userName: '',
+          email: '',
           password: '',
           login: false
       };
       this.handleInputChange = this.handleInputChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleInputChange(event) {
-      const target = event.target;
-      const value = target.type === 'text' ? target.checked : target.value;
-      const name = target.name;
-  
+    handleInputChange(evt) {
+      const value =
+  evt.target.type === "checkbox" ? evt.target.checked : evt.target.value;    
       this.setState({
-        [name]: value
+        ...this.state,
+        [evt.target.name] : value
       });
     }
+
+    handleSubmit(event){
+      
+    }    
 
  render(){    
     return (
@@ -45,13 +49,12 @@ class Login extends React.Component {
                 <div className='container-fluid border my-1 mr-2'>           
             <Form>
                 <FormGroup>
-                    <Label for="exampleText">UserName</Label>
-                    <Input type="text" name="text" id="usernametext"             checked={this.state.isGoing}
-            onChange={this.handleInputChange}/>
+                    <Label for="email">Email</Label>
+                    <Input type="email" name="email" />
                 </FormGroup>
                 <FormGroup>
                     <Label for="examplePassword">Password</Label>
-                    <Input type="password" name="password" id="examplePassword" placeholder=""             checked={this.state.isGoing}
+                    <Input type="password" name="password" id="examplePassword" checked={this.state.isGoing}
             onChange={this.handleInputChange} />
                 </FormGroup>
                 
@@ -62,16 +65,8 @@ class Login extends React.Component {
                     Remember me.
                     </Label>
                 </FormGroup>
-                <Button>OK</Button>
+                <Button style={{margin: "1vh"}} color="primary">Login</Button>
                 </Form>
-
-
-
-
-                <MDBBtn>
-                  Login
-                </MDBBtn> 
-                
 
 
                 

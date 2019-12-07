@@ -15,9 +15,7 @@ router.get('/cities', (req, res) => {
 // @route   GET api/cities/id:
 // @desc    get A city
 // @access  Public
-router.get('/city/:id', (req, res) => {
-    console.log('signos de vida')
-    console.log(req.params)
+router.get('/city/:id', (req, res) => {    
     City.findById({ _id: req.params.id })
         .then(city => res.json(city))
 });
@@ -26,15 +24,12 @@ router.get('/city/:id', (req, res) => {
 // @desc    post a citiy
 // @access  Public
 
-router.post('/city', (req, res) => {
-    console.log("Vital signs");
-    console.log(req.body)    
+router.post('/city', (req, res) => {    
     const newCity = new City({
         country: req.body.country,
         city: req.body.city,
         urlPic: req.body.urlPic
-    });
-    console.log(newCity)
+    });    
     newCity.save().then(city => res.json(city));
 });
 

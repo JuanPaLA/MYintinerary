@@ -1,3 +1,5 @@
+require('./routes/api/passport');
+const passport = require('passport')
 var express = require('express');
 var mongoose = require('mongoose');
 var cors = require('cors');
@@ -7,11 +9,13 @@ const cities = require('./routes/api/cities');
 const itinerary = require('./routes/api/itineraries');
 const activity = require('./routes/api/activities');
 const user = require('./routes/api/users');
+// const login = require('./routes/api/login');
 
 var app = express();
 
 app.use(bodyParser());
 app.use(cors());
+app.use(passport.initialize());
 
 const db = require('./config/keys').mongoURI;
 
@@ -21,10 +25,12 @@ mongoose
   .catch(err => console.log(err));
 
 //use routes
+// app.use('/api', passport.authenticate('jwt', {session: false}), cities);
 app.use('/api', cities);
 app.use('/api', itinerary);
 app.use('/api', activity);
 app.use('/api', user);
+// app.use('/api', login);
 
 const port = process.env.PORT || 5000;
 

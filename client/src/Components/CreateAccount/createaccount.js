@@ -31,8 +31,6 @@ class ccAccount extends React.Component {
         
         if(this.state.agreement === false || this.state.email === false || this.state.password === false){
             alert('check agreeement policy')
-
-
         }else{
             axios.post('http://localhost:5000/api/user', {
                 email: this.state.email,
@@ -54,7 +52,7 @@ class ccAccount extends React.Component {
                 {/* -----------ENCABEZADO--------------------- */}
                 <div className="text-center" id="subheader">
                     <div className="container">
-                        <p className="lead text-center dark"><strong>Create account</strong></p>  
+                        <p className="lead text-center dark"><strong style={{color: "black" }}>Create account</strong></p>  
                         <img  className="avatarPic text-center" src="https://www.huetamo.com.mx/images/directores/avatar-default.png" alt="avatar"/>      
                         <a className='centered' href="#" style={{color: "black" }}>Add photo</a>                          
                     </div>                    

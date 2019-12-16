@@ -4,16 +4,11 @@ import React from 'react';
 //Importamos elementos de redux
 import axios from "axios"
 import { Component } from 'react';
-import { connect } from 'react-redux';
-import { getActivities } from '../../actions/activitiesActions';
-import { getActivity } from '../../actions/activitiesActions';
-import PropTypes from 'prop-types';
 
 /*Importamos estilos */
 import '../CityItinerary/cityItinerary.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBContainer, MDBRow, MDBCol, MDBCard, MDBCardImage,
-  MDBCardBody, MDBCardText } from "mdbreact";
+import { MDBCol, MDBCard} from "mdbreact";
 
 
 class Activities extends Component {
@@ -30,31 +25,24 @@ class Activities extends Component {
   async  componentDidMount() {
     // await this.props.getActivity(this.props.id);
     axios.get(`http://localhost:5000/api/activities/itinerary/${this.state.itId}`).then((data)=>{
-      
       this.setState({
-       
         inithialActivity:data.data,
         flag:true
-
       })
-      console.log(this.state)
     })
     
     
   }
 
   render() {
-    console.log(this.props, "pepe")
-    console.log(this.state,"pepito")
     
     return (
       
-
         <div className="container">
           <a className="btn btn-outline-info" data-toggle="collapse" data-target={"#actividades"}><p style={{color:'black'}}><small>{this.state.itId}</small></p></a>
           <div id="actividades" className="collapse container">
                 {this.state.flag ?
-                this.state.inithialActivity.map((elem) => (
+                this.state.inithialActivity.map((elem, index) => (
                 <div className="row">
                   <MDBCol size="4">
                     

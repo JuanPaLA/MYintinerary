@@ -15,14 +15,14 @@ function CarouselA()  {
                      <MDBCol size="6">
                       <MDBCard >
                         <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" />
-                        <p className="text-center"><small>Roma</small></p>
+                        <p className="text-center"><small style={{color:'black'}}>Roma</small></p>
                       </MDBCard>
                     </MDBCol>
 
                     <MDBCol size="6">
                       <MDBCard >
                         <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" />
-                        <p className="text-center"><small>Buenos Aires</small></p>
+                        <p className="text-center"><small style={{color:'black'}}>Buenos Aires</small></p>
                       </MDBCard>
                     </MDBCol>
 
@@ -33,14 +33,14 @@ function CarouselA()  {
                      <MDBCol size="6">
                       <MDBCard >
                         <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" />
-                        <p className="text-center"><small>Sunderland</small></p>
+                        <p className="text-center"><small style={{color:'black'}}>Sunderland</small></p>
                       </MDBCard>
                     </MDBCol>
 
                     <MDBCol size="6">
                       <MDBCard >
                         <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" />
-                        <p className="text-center"><small>Londres</small></p>
+                        <p className="text-center"><small style={{color:'black'}}>Londres</small></p>
                       </MDBCard>
                     </MDBCol>
 
@@ -57,14 +57,14 @@ function CarouselA()  {
    <MDBCol size="6">
     <MDBCard size="2">
       <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" />
-      <p className="text-center"><small>Amsterdam</small></p>
+      <p className="text-center"><small style={{color:'black'}}>Amsterdam</small></p>
     </MDBCard>
   </MDBCol>
 
   <MDBCol size="6">
     <MDBCard >
       <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" />
-      <p className="text-center"><small>New York</small></p>
+      <p className="text-center"><small style={{color:'black'}}>New York</small></p>
     </MDBCard>
   </MDBCol>
 
@@ -75,14 +75,14 @@ function CarouselA()  {
    <MDBCol size="6">
     <MDBCard >
       <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" />      
-      <p className="text-center"><small>Barcelona</small></p>      
+      <p className="text-center"><small style={{color:'black'}}>Barcelona</small></p>      
     </MDBCard>
   </MDBCol>
 
   <MDBCol size="6">
     <MDBCard >
       <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" />
-      <p className="text-center"><small>Berlin</small></p>
+      <p className="text-center"><small style={{color:'black'}}>Berlin</small></p>
     </MDBCard>
   </MDBCol>
 
@@ -99,14 +99,14 @@ function CarouselA()  {
    <MDBCol size="6">
     <MDBCard >
       <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" />
-      <p className="text-center"><small>Praga</small></p>
+      <p className="text-center"><small style={{color:'black'}}>Praga</small></p>
     </MDBCard>
   </MDBCol>
 
   <MDBCol size="6">
     <MDBCard >
       <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" />
-      <p className="text-center"><small>Rio de Janeiro</small></p>
+      <p className="text-center"><small style={{color:'black'}}>Rio de Janeiro</small></p>
     </MDBCard>
   </MDBCol>
 
@@ -117,14 +117,14 @@ function CarouselA()  {
    <MDBCol size="6">
     <MDBCard >
       <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" />
-      <p className="text-center"><small>Bogotá</small></p>
+      <p className="text-center"><small style={{color:'black'}}>Bogotá</small></p>
     </MDBCard>
   </MDBCol>
 
   <MDBCol size="6">
     <MDBCard >
       <MDBCardImage className="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" />
-      <p className="text-center"><small>Madrid</small></p>
+      <p className="text-center"><small style={{color:'black'}}>Madrid</small></p>
     </MDBCard>
   </MDBCol>
 

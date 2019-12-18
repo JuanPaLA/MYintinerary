@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const url = require('url');
 
 //User Model
 const User = require('../../model/User');
@@ -111,16 +112,34 @@ router.post('/usuario/login', (req, res) => {
     })
 })
 
-router.get('/glogin', (req, res) =>{
-    // res.redirect('api/users/google/redire<ct')
-    // console.log("locura máxima")
-    return res.send("google login")
+//----------------GOOGLE LOGIN PASSPORT-----------------------
+const passport = require('passport');
 
-})
+router.get('/glogin', passport.authenticate('google', 
+    {scope: ['profile', 'email']}    
+))
 
+router.get(
+    '/glogin/callback', 
+    passport.authenticate('google', {
+        session:false
+    }),
+    (req, res) => {
+        //trae token
+        if(req.authInfo.mensaje){
+            //significa que no existe el usuario
+            res.status(301).redirect(url.format({
+                pathname: 'http://localhost:3000/c-account',
+                query: {
+                    email: req.user.email       
+                }
+            }))
+        }else{
+            //significa que existe el usuari
+            res.status(301).redirect(`http://localhost:3000/home/${req.user}`)
+        }
+    }
+)
 
-// app.get('/love', (req, res) => {
-//     res.send('Hi Love');
-// });
 
 module.exports = router;

@@ -1,4 +1,5 @@
 require('./routes/api/passport');
+require('./routes/api/passportGoogle');
 const passport = require('passport')
 var express = require('express');
 var mongoose = require('mongoose');
@@ -30,6 +31,7 @@ app.use('/api', cities);
 app.use('/api', itinerary);
 app.use('/api', activity);
 app.use('/api', user);
+
 // app.use('/api', login);
 
 const port = process.env.PORT || 5000;

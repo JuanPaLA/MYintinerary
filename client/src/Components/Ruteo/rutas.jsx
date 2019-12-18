@@ -12,7 +12,7 @@ const Routes = props => {
   return (
     <Router>
       <Switch>
-        <Route exact path='/' component={App} />
+        <Route exact path='/home/:token?' component={App} />
         <Route path='/login' component={Login} />
         <Route path='/c-account' component={ccAccount} />
         <Route path='/cities' component={Cities} />

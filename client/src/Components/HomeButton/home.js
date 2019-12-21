@@ -12,7 +12,7 @@ class HomeButt extends React.Component {
         console.log(window.history.length);
         
         return (
-            URLactual == 'http://localhost:3000/home' ?
+            URLactual == 'http://localhost:3000/' ?
             <div className="p-2 bg-dark shadow-dark">
                     <footer className="row text-center">
                         <Link className="col text-muted" to="/"></Link>

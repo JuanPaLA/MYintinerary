@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
+import queryString from 'query-string';
 import {
   Collapse,
   Navbar,
   NavbarToggler,
   Nav,
   NavItem,
-  NavLink,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
@@ -14,12 +14,36 @@ import {
 import './nav.css';
 
 
-const Nav2 = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
+class Nav2 extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      isOpen: false,
+      setIsOpen: false
+    }
+    this.toggle = this.toggle.bind(this)
+  }
+  toggle () {
+        this.setState({
+          setIsOpen: !this.state.setIsOpen
+        })
+    }
+ 
+    async componentDidMount () {
+      var param = queryString.parse(this.props.location.search)
 
-  const toggle = () => setIsOpen(!isOpen);
+      if(param){
+        localStorage.setItem("token", param.token)
+      }
+    }
 
+//------------EN FORMA DE CONSTANTE-----------
+// const Nav2 = (props) => {
+//   const [isOpen, setIsOpen] = useState(false);
 
+//   const toggle = () => setIsOpen(!isOpen);
+
+render(){
   return (
     <div>
       <Navbar color="light" light expand="md">
@@ -40,8 +64,8 @@ const Nav2 = (props) => {
           </DropdownMenu>
         </UncontrolledDropdown>
 
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
+        <NavbarToggler onClick={this.toggle} />
+        <Collapse isOpen={this.state.setIsOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
             <Link to="/c-account">
@@ -59,6 +83,7 @@ const Nav2 = (props) => {
       </Navbar>
     </div>
   );
+}
 }
 
 export default Nav2;

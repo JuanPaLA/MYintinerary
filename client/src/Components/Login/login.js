@@ -29,15 +29,16 @@ class Login extends React.Component {
     handleSubmit(event){
       if(this.state.email.length == 0 || this.state.password.length == 0){
         alert('complete required fields')    
-    }else{      
+    }else{ 
+      console.log("ENTRÓ AL AXIOSSSS")     
       axios
-        .post("http://localhost:5000/api/user", { 
+        .post("http://localhost:5000/api/usuario/login", { 
           email: this.state.email, 
           password: this.state.password})
         .then(res => {        
           console.log(res);
           console.log(res.data);
-          alert(res)    
+          
         }).catch((err)=>console.log(err))
           this.setState({ email: "", password: ""});
      
@@ -53,7 +54,7 @@ class Login extends React.Component {
  render(){    
     return (
       <div>
-        <Nav />
+        <Nav location = {this.props.location} />
         
           <div className="text-center">
 

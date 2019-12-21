@@ -8,17 +8,17 @@ import CentralComp from './Components/CentralComponent/centralcomp';
 import HomeButt from './Components/HomeButton/home';
 
 class App extends Component {
+  constructor(props){
+    super(props)
+  }
   
   componentDidMount(){
-     if(this.props.match.params.token){
-       //almacenar en el localStorage
-      //  this.set
-     } 
+     console.log(this.props)
   }
   render () {
     return (      
       <div>
-        <Nav />  
+        <Nav location = {this.props.location} />  
         <Header />
         <CentralComp />
         <CarouselA />

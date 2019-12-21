@@ -37,7 +37,8 @@ class ccAccount extends React.Component {
                 password: this.state.password,
                 country: this.state.country
             }).then(response => {
-                console.log("posted user");
+                console.log("posted user");  
+                response.redirect(`http://localhost:3000/home/`)              
             }).catch(e => {
                 console.log(e);
             });
@@ -48,7 +49,7 @@ class ccAccount extends React.Component {
     render() {
         return (
             <div>
-                <Nav />            
+                <Nav location = {this.props.location}/>            
                 {/* -----------ENCABEZADO--------------------- */}
                 <div className="text-center" id="subheader">
                     <div className="container">

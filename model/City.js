@@ -10,6 +10,15 @@ const CitySchema = new Schema({
     city: {
         type: String,
         required: true
+    },
+    urlPic: {
+        type: String
+    },
+    itinerariesId: {
+        type: [{
+            id: Schema.Types.ObjectId
+        }
+        ]
     }
 });
 

@@ -2,7 +2,7 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import './centralcomp.css';
 import { Link } from 'react-router-dom';
-import { Itinerary } from '../Itinerary/itinerary'; 
+ 
 
 
 const CentralComp = () => {
@@ -15,9 +15,7 @@ const CentralComp = () => {
             <div id="center">
                 <img id="centerLogo" src="./circled-right-2.png" alt="circled-right"/>                
             </div>
-            </Link>
-            
-
+            </Link>            
         </Container>        
     );
 }

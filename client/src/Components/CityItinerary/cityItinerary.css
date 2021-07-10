@@ -1,13 +1,15 @@
 #image{
-    position: relative; 
+    position: relative;
+    height: 20%; 
 }
 
 #image h3{
     position: absolute; 
-    top: 200px; 
+    top: 175px; 
     left: 0; 
     width: 100%; 
     margin: auto;
+    color: white;
 }
 
 .container {
@@ -21,4 +23,14 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: white;
+  }
+
+  .title{
+    color:black;
+  }
+
+  .img-thumbnail{
+    height: 20vh;
+    width: 100%;
   }

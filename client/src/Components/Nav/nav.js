@@ -1,38 +1,56 @@
-import React, { Component } from "react";
-import './nav.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { MDBNavbar, MDBNavbarNav, MDBNavbarToggler, MDBCollapse } from "mdbreact";
-import Jumbotron from "react-bootstrap/Jumbotron";
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem } from 'reactstrap';
+
+const Nav2 = (props) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
 
 
-  class Nav extends Component {
-    state = {
-      isOpen: false
-    };
-
-    toggleCollapse = () => {
-      this.setState({ isOpen: !this.state.isOpen });
-    }
-   
-    render() {
-      return (
-          <Jumbotron fluid className="mainJumbo">
-           <MDBNavbarNav left>
-            <MDBNavbar color="default-color" dark expand="md">
-              <MDBNavbarToggler onClick={this.toggleCollapse} />
-                <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
-
-                  <Link to = "/login">Login</Link> <br></br>
-                   <Link to = "/c-account">Create Account</Link>  
-         
-                </MDBCollapse>
-              </MDBNavbar>
-          </MDBNavbarNav>
-          </Jumbotron>        
-        
-        );
-      }
-    }
+  return (
+    <div>
+      <Navbar color="light" light expand="md">
       
-    export default  (Nav);
+      <UncontrolledDropdown nav inNavbar>   
+        <DropdownToggle nav caret>
+          <i class="fas fa-user" size="4x" ></i>
+        </DropdownToggle>
+        
+          <DropdownMenu>
+            <DropdownItem>
+              Option 1
+            </DropdownItem>
+            <DropdownItem>
+              Option 2
+            </DropdownItem>
+          </DropdownMenu>
+        </UncontrolledDropdown>
+
+        <NavbarToggler onClick={toggle} />
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="ml-auto" navbar>
+            <NavItem>
+              <NavLink href="#">Login</NavLink>
+            </NavItem>            
+            <NavItem>
+              <NavLink href="#">Create Account</NavLink>
+            </NavItem>            
+          </Nav>
+        </Collapse>
+       
+      </Navbar>
+    </div>
+  );
+}
+
+export default Nav2;

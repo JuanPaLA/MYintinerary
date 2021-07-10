@@ -9,15 +9,15 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: lightgray;
-  color: white;
+  /* background-color: lightgray;
+  color: white; */
   text-align: center;
 
   display: flex;
 }
 
 #homeButton{
-  height: 4vh;
+  height: 7vh;
   margin-top: 1vh;
   margin-bottom: 1vh;
 }

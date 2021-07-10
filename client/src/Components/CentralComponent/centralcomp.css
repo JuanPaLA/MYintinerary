@@ -1,6 +1,7 @@
 #motto{
     margin-top: -0%;
     display: flex;
+    margin-top: 3vh;
   }
   
   #motto p{
@@ -23,5 +24,6 @@
   #centerText{
     text-align: center;
     align-content: center;
+    
     margin-bottom: 3vh;
   }

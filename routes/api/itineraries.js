@@ -13,6 +13,8 @@ router.get('/', (req, res) => {
         .then(itineraries => res.json(itineraries))
 });
 
+
+
 // @route   POST api/itineraries
 // @desc    post a itinerary
 // @access  Public
@@ -24,10 +26,12 @@ router.post('/', (req, res) => {
         rating: req.body.rating,
         duration: req.body.duration,
         price: req.body.price,
-        hashtag: req.body.hashtag
+        hashtag: req.body.hashtag,
+        cityId: req.body.cityId
     });
     newItinerary.save().then(itinerary => res.json(itinerary));
 });
+
 
 // @route   DELETE api/itineraries/:id
 // @desc    delete a itinerary
@@ -35,9 +39,43 @@ router.post('/', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     Itinerary.findById(req.params.id)
-        .then(itinerary => itinerary.remove().then(() => res.json({ success: true })))
-        .catch(err => res.status(404).json({ success: false }));
+        .then(itinerary => itinerary.remove().then(() => res.json({
+            success: true
+        })))
+        .catch(err => res.status(404).json({
+            success: false
+        }));
 });
 
 
-module.exports = router; 
+// @route   GET api/itineraries/:id
+// @desc    get a itinerary
+// @access  Public
+
+router.get('/:id', (req, res) => {
+    Itinerary.findById(req.params.id)
+        .then(itineraries => res.json(itineraries))
+        .then(data => console.log(data))
+})
+
+router.get('/city/:idCity', (req, res) => {
+    console.log(req.params.idCity);
+
+    // console.log('get intineraries por city');
+    Itinerary.find({ cityId: req.params.idCity })
+        .catch(err => console.log(err))
+        .then(itineraries => res.json(itineraries))
+})
+
+
+// @route   GET api/itineraries/:cityId --> fetch it by "cityId"
+// @desc    get a itinerary
+// @access  Public
+
+router.get('/:cityId', (req, res) => {
+    Itinerary.findOne(req.params.cityId)
+        .then(itineraries => res.json(itineraries))
+        .then(data => console.log(data))
+})
+
+module.exports = router;
